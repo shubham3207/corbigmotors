@@ -62,5 +62,8 @@ def search_view(request):
         }
         return render(request, 'search.html', context)
     
-
+def product_single(request,id):
+    views = {}
+    views['product_details'] = Product.objects.filter(id = id)
+    return render(request,'product-single.html',views)
 
