@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corbig Motors</title>
+    <!-- Link to Font Awesome CSS for icons -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/toastify.min.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="">
+        <div class="nav-wrapper">
+            <!-- Navbar Logo -->
+            <div class="logo">
+                <!-- Logo Image -->
+                <a href="#home">
+                    <img src="{% static 'img/logo.jpg' %}" alt="Logo">
+                </a>
+            </div>
+
+            <!-- Navbar Links -->
+            <ul id="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/product">Products</a></li>
+               <!-- Dropdown Menu -->
+
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu Icon -->
+    <div class="menuIcon">
+        <span class="icon icon-bars"></span>
+        <span class="icon icon-bars overlay"></span>
+    </div>
+
+    <!-- Overlay Menu -->
+    <div class="overlay-menu">
+        <ul id="menu">
+            <li><a href="">Home</a></li>
+            <li><a href="/product">Products</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </div>
+      <!-- Main Content Block -->
+      <div class="container">
+        {% block content %}
+        <!-- Default content or an empty block -->
+        {% endblock %}
+    </div>
+
+    <!-- Include your JavaScript file here -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+    <script src="{% static 'js/product.js' %}"></script>
+    <script src="{% static 'js/toastify.min.js' %}"></script>
+</body>
+</html>
