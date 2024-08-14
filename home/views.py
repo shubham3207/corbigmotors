@@ -9,8 +9,10 @@ from django.contrib import messages
 
 
 def homeview(request):
+    views={}
+    views['products'] =Product.objects.all()
+    return render(request,"home.html",views)
 
-    return render(request,"home.html")
 
 def productview(request):
     views={}
@@ -65,5 +67,5 @@ def search_view(request):
 def product_single(request,id):
     views = {}
     views['product_details'] = Product.objects.filter(id = id)
-    return render(request,'product-single.html',views)
+    return render(request,'product_detail.html',views)
 
