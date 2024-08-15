@@ -8,7 +8,7 @@
 	        	<div class="col-md-6">
 	        		<div id="slider" class="owl-carousel product-slider">
 						<div class="item">
-						  	<img src="{{product_details.image.url}}" />
+						  	<img src="{{product.image.url}}" />
 						</div>
             					</div>
 			
@@ -30,19 +30,22 @@
 								    <input type="radio" id="star1" name="rate" value="1" />
 								    <label for="star1" title="text">1 star</label>
 								  </div>
-								<span>3 Reviews</span>
+								<!-- <span>3 Reviews</span> -->
 							</div>
-		        			<div class="product-price-discount"><span>{{product.price}}</span><span class="line-through">$29.00</span></div>
+		        			<div class="product-price-discount"><span>{{product.price}}</span>
+								<!-- <span class="line-through">$29.00</span> -->
+							</div>
 		        		</div>
-	        			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	        		
 	        			<div class="row">
 	        			
 	        				<div class="col-md-6">
 	        					<label for="color">Color</label>
 								<select id="color" name="color" class="form-control">
-									<option>Blue</option>
-									<option>Green</option>
-									<option>Red</option>
+									
+									<option>{{product.color}}</option>
+									<!-- <option>Green</option>
+									<option>Red</option> -->
 								</select>
 	        				</div>
 	        			</div>
@@ -65,46 +68,36 @@
                         <table border="1">
                             
                             <tr>
-                              <th>Row 1</th>
-                              <td>Data 1</td>
+                              <th>Max Speed</th>
+                              <td>{{product.maxspeed}}</td>
                             </tr>
                             <tr>
-                              <th>Row 2</th>
-                              <td>Data 3</td>
+                              <th>Range</th>
+                              <td>{{product.range}}</td>
                             </tr>
                             <tr>
-                              <th>Row 2</th>
-                              <td>Data 3</td>
+                              <th>CC Equivalent</th>
+                              <td>{{product.ccequivalent}}</td>
                             </tr>
-                            <tr>
-                              <th>Row 2</th>
-                              <td>Data 3</td>
-                            </tr>
+                           
                             
                           </table>
                           <table border="1">
                             
                             <tr>
-                              <th>Row 1</th>
-                              <td>Data 1</td>
+                              <th>Battery</th>
+                              <td>{{product.battery}}</td>
                             </tr>
                             <tr>
                               <th>Row 2</th>
-                              <td>Data 3</td>
+                              <td>{{product.maxspeed}}</td>
                             </tr>
-                            <tr>
-                              <th>Row 2</th>
-                              <td>Data 3</td>
-                            </tr>
-                            <tr>
-                              <th>Row 2</th>
-                              <td>Data 3</td>
-                            </tr>
+                           
                             
                           </table>
                     </div>
 				  	<div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-				  		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+						<p>{{product.description}}.</p>
 				  	</div>
 				  	>
 				</div>
