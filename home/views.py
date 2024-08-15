@@ -44,7 +44,7 @@ def contact(request):
         # messages.success(request, 'Your message has been sent successfully!')
         
         # Redirect to the same page to prevent resubmission on refresh
-        return redirect('contact')  # Replace 'contact' with your URL name
+        # return redirect('contact')  # Replace 'contact' with your URL name
 
     return render(request, 'contact.html')
 

@@ -156,47 +156,94 @@
       {% endblock %}
     </div>
     <div id="productContent"></div>
-    <footer class="footer bg-dark text-white mt-5">
+    <footer class="footer bg-dark text-white mt-5 py-4">
       <div class="container">
         <div class="row">
           <!-- Company Info -->
-          <div class="col-md-2">
-            <img src="{% static 'img/logo.jpg' %}" alt="Logo" width="80px" />
+          <div class="col-md-2 mb-2">
+            <img
+              src="{% static 'img/footerlogo.png' %}"
+              alt="Logo"
+              width="20px"
+              class="mb-3"
+            />
             <p>
               We are a leading company in our industry with a strong focus on
               customer satisfaction and quality service.
             </p>
           </div>
-          <div class="col-md-2"></div>
-          <!-- Links -->
-          <div class="col-md-4">
-            <h5>Quick Links</h5>
+          <div class="col-md-1 mb-2"></div>
+          <!-- Quick Links -->
+          <div class="col-md-3 mb-4">
+            <h5 class="text-uppercase">Quick Links</h5>
             <ul class="list-unstyled">
-              <li><a href="/" class="text-white">Home</a></li>
-              <li>
-                <a href="/about" class="text-white">About Us</a>
+              <li class="mb-2">
+                <a href="/" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li class="mb-2">
+                <a href="/about" class="text-white text-decoration-none"
+                  >About Us</a
+                >
               </li>
               <li>
-                <a href="/contact" class="text-white">Contact</a>
+                <a href="/contact" class="text-white text-decoration-none"
+                  >Contact</a
+                >
               </li>
             </ul>
           </div>
 
           <!-- Contact Info -->
-          <div class="col-md-4">
-            <h5>We are at</h5>
+          <div class="col-md-3 mb-4">
+            <h5 class="text-uppercase">We are at</h5>
             <ul class="list-unstyled">
-              <li><i class="fas fa-map-marker-alt"></i> Gwarko,Kathmandu</li>
-              <li><i class="fas fa-phone"></i> +977 9801021212</li>
-              <li><i class="fas fa-envelope"></i> corbigmotors@gmail.com</li>
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt mr-2"></i> Gwarko, Kathmandu
+              </li>
+              <li class="mb-2">
+                <i class="fa fa-phone mr-2" aria-hidden="true"></i> +977
+                9801021212
+              </li>
+              <li>
+                <i class="fa fa-envelope mr-2" aria-hidden="true"></i>
+                <a
+                  href="mailto:corbigmotors@gmail.com"
+                  class="text-white text-decoration-none"
+                >
+                  corbigmotors@gmail.com
+                </a>
+              </li>
             </ul>
           </div>
+
+          <!-- Social Media Links -->
+          <div class="col-md-3 mb-4">
+            <h5 class="text-uppercase">Connect with us</h5>
+            <div class="d-flex">
+              <a
+                href="https://www.facebook.com/profile.php?id=100093164697533&mibextid=LQQJ4d"
+                class="text-white mr-3"
+              >
+                <i class="ri-facebook-fill ri-2x"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/corbig_motors?igsh=dHRldTlwb20zbGsx"
+                class="text-white"
+              >
+                <i class="ri-instagram-line ri-2x"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="text-center mt-4">
-          <p>&copy; 2024 Corbig Motors. All Rights Reserved.</p>
+
+        <!-- Footer Bottom -->
+        <div class="text-center">
+          <hr class="border-secondary" />
+          <p class="mb-0">&copy; 2024 Corbig Motors. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
+
     <script>
       $("#productContent").load("product.html");
     </script>

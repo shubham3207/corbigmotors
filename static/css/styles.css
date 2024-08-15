@@ -13,7 +13,9 @@ a{
     font-size: 1rem;
     /* font-weight: bold; */
 }
-
+.socialLogo i {
+    color: white;
+}
 /* navbar styling */
 .navbar{
     display: flex;
@@ -26,8 +28,8 @@ a{
 
 /* logo style  */
 .logo img{
-    width: 8rem;
-    height: 4rem;
+    width: 10rem;
+    height: 4rem;   
     margin-left:1rem;
 }
 
@@ -62,6 +64,7 @@ a{
 }
 .nav-menu a:hover{
     background-color:  var(--primary-color);
+    text-decoration: none;
 }
 
 .hide{

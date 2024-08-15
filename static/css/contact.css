@@ -12,8 +12,9 @@ margin-bottom: 10px;
 margin-bottom: 15px;
 }
 .contact-info-item {
-background: #071c34;
-padding: 30px 0px;
+    background: #071c34;
+    padding: 30px 0px;
+    height: 210px;
 }
 .contact-page-sec .contact-page-form h2 {
 color: #071c34;
