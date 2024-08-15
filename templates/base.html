@@ -34,6 +34,35 @@
 
     <link rel="stylesheet" href="{% static 'css/about.css' %}" />
     <link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+    <style>
+      .hide {
+        display: none;
+      }
+      /* * for Desktop view  */
+      @media screen and (min-width: 600px) {
+        .navbar {
+          justify-content: space-around;
+        }
+        .nav-menu {
+          display: block;
+          position: static;
+          width: auto;
+          margin-right: 20px;
+          background: none;
+        }
+        .nav-menu a {
+          display: inline-block;
+          padding: 15px 20px;
+        }
+        .nav-menu a:hover {
+          background-color: var(--primary-color);
+          border-radius: 5px;
+        }
+        .hamburger-menu {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -132,10 +161,21 @@
     <script>
       $("#productContent").load("product.html");
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger-menu");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+          navMenu.classList.toggle("hide");
+        });
+      });
+    </script>
     <!-- Include your JavaScript file here -->
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/scroll.js' %}"></script>
     <script src="{% static 'js/home.js' %}"></script>
     <script src="{% static 'js/product_detail.js' %}"></script>
   </body>
