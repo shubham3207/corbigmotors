@@ -1,48 +1,60 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>Corbig Motors</title>
     <!-- Link to Font Awesome CSS for icons -->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
-      rel="stylesheet">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
 
     <!-- Link to your custom CSS file -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
-    <link rel="stylesheet" href="{% static 'css/table.css' %}">
-    
-    <link rel="stylesheet" href="{% static 'css/about.css' %}">
-    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/product_detail.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/table.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/about.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+  </head>
+  <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="/">
-                    <img src="{% static 'img/logo.jpg' %}" alt="Logo">
-                </a>
-            </div>
-            <div class="hamburger-menu">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </div>
-            <div class="nav-menu hide">
-                <a href="/">Home</a>
-                <a href="/product">Product</a>
-                <a href="/about">About</a>  
-                <a href="/contact">Contact</a>
-            </div>
-        </nav>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'img/logo.jpg' %}" alt="Logo" />
+          </a>
+        </div>
+        <div class="hamburger-menu">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+        <div class="nav-menu hide">
+          <a href="/">Home</a>
+          <!-- <a href="/product">Product</a> -->
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </nav>
     </header>
     <!-- <header>
         <nav id="navbar">
@@ -62,8 +74,6 @@
             </div>
         </nav>
     </header>    -->
-    
-    
 
     <!-- Menu Icon -->
     <!-- <div class="menuIcon">
@@ -71,17 +81,16 @@
         <span class="icon icon-bars overlay"></span>
     </div> -->
 
-   
-      <!-- Main Content Block -->
-      <div class="container">
-        {% block content %}
-        <!-- Default content or an empty block -->
-        {% endblock %}
+    <!-- Main Content Block -->
+    <div class="container">
+      {% block content %}
+      <!-- Default content or an empty block -->
+      {% endblock %}
     </div>
     <div id="productContent"></div>
 
     <script>
-        $('#productContent').load('product.html');
+      $("#productContent").load("product.html");
     </script>
     <!-- Include your JavaScript file here -->
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
@@ -89,7 +98,5 @@
     <script src="{% static 'js/scripts.js' %}"></script>
     <script src="{% static 'js/home.js' %}"></script>
     <script src="{% static 'js/product_detail.js' %}"></script>
-  
-    
-</body>
+  </body>
 </html>

@@ -1,130 +1,167 @@
 <style>
-   :root {
+  :root {
     --primary-color: #f3eae5;
     --text-dark: #2c2724;
     --white: #ffffff;
     --max-width: 1200px;
   }
-    body {
-        font-family: 'Inter', sans-serif;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-        padding: 20px;
-        margin: 0;
-    }
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0;
+  }
 
+  .cont {
+    max-width: 400px;
+    margin: 2rem auto;
+  }
+
+  .product-card {
+    background-color: var(--card-background);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .product-card__image {
+    height: 250px;
+    width: 400px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .product-card__info {
+    padding: 20px;
+  }
+
+  .product-card__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+
+  .product-card__description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .product-card__price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product-card__price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    /* color: var(--primary-color); */
+  }
+
+  .product-card__btn {
+    background-color: var(--primary-color);
+    color: #c71729;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+.product-title h3{
+    /* margin: 1rem;
+    margin: 1rem; */
+  /* font-size: 3.5rem; */
+  padding: 10px;
+  border-top: 2px solid  var(--primary-color);  
+  font-weight: 700;
+  /* line-height: 4.5rem; */
+  color: var(--text-dark);
+}
+  .product-card__btn:hover {
+    background-color: #15148B;
+    color: white;
+  }
+
+  @media (max-width: 480px) {
     .cont {
-        max-width: 400px;
-        margin: 2rem auto;
-    }
-
-    .product-card {
-        background-color: var(--card-background);
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .product-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      max-width: 100%;
+      padding: 0 20px;
     }
 
     .product-card__image {
-        height: 250px;
-        overflow: hidden;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .product-card__info {
-        padding: 20px;
+      height: 200px;
     }
 
     .product-card__title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-        color: var(--text-color);
+      font-size: 1.3rem;
     }
 
     .product-card__description {
-        font-size: 0.9rem;
-        color: #666;
-        margin-bottom: 20px;
-    }
-
-    .product-card__price-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      font-size: 0.8rem;
     }
 
     .product-card__price {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: var(--primary-color);
+      font-size: 1.1rem;
     }
 
     .product-card__btn {
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 50px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+      padding: 8px 16px;
+      font-size: 0.8rem;
     }
-
-    .product-card__btn:hover {
-        background-color: #C71729;
-    }
-
-    @media (max-width: 480px) {
-        .cont {
-            max-width: 100%;
-            padding: 0 20px;
-        }
-
-        .product-card__image {
-            height: 200px;
-        }
-
-        .product-card__title {
-            font-size: 1.3rem;
-        }
-
-        .product-card__description {
-            font-size: 0.8rem;
-        }
-
-        .product-card__price {
-            font-size: 1.1rem;
-        }
-
-        .product-card__btn {
-            padding: 8px 16px;
-            font-size: 0.8rem;
-        }
-    }
+  }
 </style>
-
+<div class="product-title"> <h3>Our Products</h3></div>
+{% for product in products %}
 <div class="cont">
-    {% for product in products %}
-    <div class="product-card">
-        <div class="product-card__image" style="background-image: url('{{ product.image1.url }}');"></div>
-        <div class="product-card__info">
-            <h2 class="product-card__title">{{ product.name }}</h2>
-            <p class="product-card__description">{{ product.title }}</p>
-            <div class="product-card__price-row">
-                <span class="product-card__price">{{ product.price }}</span>
-                  <a href="/product_single/{{product.id}}" class="primary-btn">View Details</a>
-            </div>
-        </div>
+  <div class="product-card">
+    <div class="product-card__image">
+      <img
+        src="{{ product.image1.url }}   "
+        alt="Image Bike"
+      />
     </div>
-    {% endfor %}
+    <div class="product-card__info">
+      <h2 class="product-card__title">{{ product.name }}</h2>
+      <p class="product-card__description">
+        {{ product.title }}
+      </p>
+      <div class="product-card__price-row">
+        <span class="product-card__price">  Rs{{ product.price }}</span>
+        <button class="product-card__btn">View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="cont">
+ 
+  <div class="product-card">
+    <div
+      class="product-card__image"
+      style="background-image: url('{{ product.image1.url }}');"
+    ></div>
+    <div class="product-card__info">
+      <h2 class="product-card__title">{{ product.name }}</h2>
+      <p class="product-card__description">{{ product.title }}</p>
+      <div class="product-card__price-row">
+        <span class="product-card__price">RS {{ product.price }}</span>
+        <a href="/product_single/{{product.id}}" class="primary-btn"
+          >View Details</a
+        >
+      </div>
+    </div>
+  </div> -->
+  {% endfor %}
 </div>
