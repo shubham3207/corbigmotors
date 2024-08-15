@@ -1,7 +1,9 @@
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
-
+document.getElementById('scroll-down-btn').addEventListener('click', function() {
+  document.getElementById('product').scrollIntoView({ behavior: 'smooth' });
+});    
 menuBtn.addEventListener("click", (e) => {
   navLinks.classList.toggle("open");
 
