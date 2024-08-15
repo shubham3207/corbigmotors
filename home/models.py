@@ -18,6 +18,10 @@ class Product(models.Model):
     maxspeed= models.CharField(max_length=200)
     range=models.CharField(max_length=200, default=0)
     ccequivalent=models.CharField(max_length=200, default=0)
+    ratedpeakpower=models.CharField(max_length=200, default=0)
+    peaktorque=models.CharField(max_length=200, default=0)
+    chargetime=models.CharField(max_length=200, default=0)
+    netwt=models.CharField(max_length=200, default=0)
 
     battery= models.CharField(max_length=200,null=True, blank=True)
     image1=models.ImageField(null=True, blank=True,upload_to="media")

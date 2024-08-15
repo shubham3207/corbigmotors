@@ -38,6 +38,45 @@
       .hide {
         display: none;
       }
+      /* Toaster CSS */
+      .toaster {
+        visibility: hidden;
+        min-width: 250px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        transform: translateX(-50%);
+      }
+      .toaster.show {
+        visibility: visible;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+      @keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+      @keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
       /* * for Desktop view  */
       @media screen and (min-width: 600px) {
         .navbar {
@@ -161,6 +200,7 @@
     <script>
       $("#productContent").load("product.html");
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const hamburger = document.querySelector(".hamburger-menu");
@@ -168,6 +208,28 @@
 
         hamburger.addEventListener("click", () => {
           navMenu.classList.toggle("hide");
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Form submission handling
+        const form = document.getElementById("myForm");
+        const toaster = document.getElementById("toaster");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault(); // Prevent the default form submission
+
+          // Show the toaster
+          toaster.classList.add("show");
+
+          // Hide the toaster after 3 seconds
+          setTimeout(() => {
+            toaster.classList.remove("show");
+          }, 3000);
+
+          // Optionally, you can reset the form here
+          form.reset();
         });
       });
     </script>
