@@ -39,15 +39,14 @@
 	        		
 	        			<div class="row">
 	        			
-	        				<div class="col-md-6">
-	        					<label for="color">Color</label>
+							<div class="col-md-6">
+								<label for="color">Color</label>
 								<select id="color" name="color" class="form-control">
-									
-									<option>{{product.color}}</option>
-									<!-- <option>Green</option>
-									<option>Red</option> -->
+									{% for color in product.colors.all %}
+										<option value="{{ color.name }}">{{ color.name }}</option>
+									{% endfor %}
 								</select>
-	        				</div>
+							</div>
 	        			</div>
 <div style="margin-top: 15px; font-weight: bold;"><p>Description</p></div>
 						<div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">

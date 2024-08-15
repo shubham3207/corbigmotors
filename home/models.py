@@ -1,17 +1,15 @@
 from django.db import models
 
 # Create your models here.
+class Color(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.name
 class Product(models.Model):
-    COLOR_CHOICES=[
-        ('black', 'Black'),
-        ('red', 'Red'),
-         ('grey', 'Grey'),
-          ('green', 'Green'),
-           ('blue', 'Blue'),
-            ('white', 'White'),
-    ]
+   
     name= models.CharField(max_length=200,  )
-    color= models.CharField(max_length=200, choices=COLOR_CHOICES, default='red')
+    colors = models.ManyToManyField(Color)
     price= models.FloatField(max_length=300)
     title= models.CharField(max_length=400)
     description= models.TextField(max_length=800)
@@ -42,3 +40,4 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
     
+
