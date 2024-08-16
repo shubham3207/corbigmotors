@@ -21,7 +21,7 @@ def productview(request):
 
 
 
-from django.shortcuts import redirect
+
 
 def contact(request):
     if request.method == 'POST':
@@ -30,7 +30,7 @@ def contact(request):
         sub = request.POST.get('subject')
         mes = request.POST.get('message')
         pho = request.POST.get('phone')
-        
+
         # Create and save the Contact instance
         Contact.objects.create(
             name=na,
@@ -39,12 +39,12 @@ def contact(request):
             message=mes,
             phone=pho,
         )
-        
-        # Add a success message to be shown as a toast notification
-        # messages.success(request, 'Your message has been sent successfully!')
-        
+
+       
+        messages.success(request, 'Your message has been sent successfully!')
+
         # Redirect to the same page to prevent resubmission on refresh
-        # return redirect('contact')  # Replace 'contact' with your URL name
+        return redirect('/')  # Ensure 'contact' matches your URL name
 
     return render(request, 'contact.html')
 
